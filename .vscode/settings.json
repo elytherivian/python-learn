@@ -1,0 +1,9 @@
+{
+  "editor.fontFamily": "'Source Code Pro', 'PingFang SC', monospace",
+  "editor.fontSize": 15,
+
+  "[python]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  }
+}

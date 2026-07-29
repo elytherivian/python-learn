@@ -1,5 +1,6 @@
 import sys
-from datetime import UTC, datetime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 def main():
@@ -28,8 +29,9 @@ def main():
     level = "INFO"
     module = "database"
     message = "Connection established"
+    shanghai = ZoneInfo("Asia/Shanghai")
     print(
-        f"[{datetime.now(UTC):%Y-%m-%d %H:%M:%S}] [{level:<5}] [{module:<10}] {message}"
+        f"[{datetime.now(shanghai):%Y-%m-%d %H:%M:%S}] [{level:<5}] [{module:<10}] {message}"
     )
 
 

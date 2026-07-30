@@ -82,6 +82,9 @@ def main():
             longest_name = name
     print(f"The longest name is {longest_name} with a count of {max_count}")
 
+    # 9、不要在 for while 循环后使用 else
+    #### Python 特殊语法 会让人看不懂含义
+
 
 if __name__ == "__main__":
     main()

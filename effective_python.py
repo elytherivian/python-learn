@@ -7,6 +7,10 @@ def main():
 
     # Effective Python: 90 Specific Ways to Write Better Python
 
+    ##############################################################################
+    # chapter 1: Pythonic Thinking
+    ##############################################################################
+
     # 1、查询自己使用的 python 版本
     print(sys.version)
     print(sys.version_info)
@@ -84,6 +88,29 @@ def main():
 
     # 9、不要在 for while 循环后使用 else
     #### Python 特殊语法 会让人看不懂含义
+
+    # 10、使用赋值表达式（walrus operator :=）以减少重复代码
+    #### 被赋值变量成为表达式结果
+    fruit = {
+        "apple": 10,
+        "banana": 8,
+        "orange": 99,
+    }
+
+    def make_orange_juice(count: int):
+        print(f"Making {count} orange juice(s)")
+
+    def out_of_stock():
+        print("Out of stock!")
+
+    if count := fruit.get("orange", 0):
+        make_orange_juice(count)
+    else:
+        out_of_stock()
+
+    ##############################################################################
+    # chapter 2: list and dict
+    ##############################################################################
 
 
 if __name__ == "__main__":

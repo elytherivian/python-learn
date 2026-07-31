@@ -1,7 +1,7 @@
 import sys
+from collections import defaultdict
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from collections import defaultdict
 
 
 def main():

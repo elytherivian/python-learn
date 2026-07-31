@@ -1,6 +1,7 @@
 import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from collections import defaultdict
 
 
 def main():
@@ -187,18 +188,34 @@ def main():
     # 15、不要过分依赖给字典添加条目时所用的顺序
 
     # 16、使用 get 处理 key 不在 dict 中的情况 不要使用 in 和 KeyError
+    #### 对于非自己创建的字典 处理 key 不在 dict 中的情况
     counters = {"apple": 23, "banana": 10}
     key_orange = "orange"
     count = counters.get(key_orange, 0)
     counters[key_orange] = count + 1
     print(f"Fruit Counters : {counters}")
-    #### 使用赋值表达式
+    #### 使用赋值表达式处理复杂情况
     key_mango = "mango"
     if (count := counters.get(key_mango)) == None:
         counters[key_mango] = 1
     else:
         counters[key_mango] += 1
     print(f"Fruit Counters : {counters}")
+
+    # 17、用 defaultdict 处理内部状态中缺失元素 而不是使用 setdefault
+    class Visits:
+        def __init__(self):
+            self.data = defaultdict(set)
+
+        def add(self, country: str, city: str):
+            self.data[country].add(city)
+
+    visits = Visits()
+    visits.add("England", "Bath")
+    visits.add("England", "London")
+    print(f"Visits : {visits.data}")
+
+    # 什么是 set ？？？？？ 好奇怪
 
 
 if __name__ == "__main__":

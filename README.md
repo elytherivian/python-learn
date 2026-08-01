@@ -11,12 +11,6 @@ git clone git@github.com:elytherivian/python-learn.git
 cd python-learn
 ```
 
-Install `uv` if it is not already available:
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
 Sync dependencies from `uv.lock`:
 
 ```bash

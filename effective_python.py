@@ -205,6 +205,8 @@ def main():
     # 17、用 defaultdict 处理内部状态中缺失元素 而不是使用 setdefault
     class Visits:
         def __init__(self):
+            #### set 是一种数据类型 这里指默认数据是一个 set 集合
+            #### defaultdict 会为不存在的 key 自动创建一个默认值 具体为 set() 集合
             self.data = defaultdict(set)
 
         def add(self, country: str, city: str):
@@ -214,8 +216,6 @@ def main():
     visits.add("England", "Bath")
     visits.add("England", "London")
     print(f"Visits : {visits.data}")
-
-    # 什么是 set ？？？？？ 好奇怪
 
 
 if __name__ == "__main__":

@@ -98,7 +98,7 @@ def main():
     finally:
         print("Execution completed.")
 
-    with open("data.json", "r") as f:
+    with open("static/data/data.json", "r") as f:
         content = f.read()
         data = json.loads(content)
         print(data["name"])

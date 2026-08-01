@@ -217,6 +217,31 @@ def main():
     visits.add("England", "London")
     print(f"Visits : {visits.data}")
 
+    # 18、使用 __missing__ 构建依赖 key 的默认 value 值
+    #### 在 dict 中 如果构建的数据 value 需要 key 来确定
+    #### 那么可以定义自己的 dict 子类 并实现 __missing__ 方法
+    #### 需要根据文件路径来拿到文件句柄 dict[file_path][file_handle]
+    def open_picture(file_path: str):
+        try:
+            return open(file_path, "rb")
+        except OSError as e:
+            print(f"Error opening picture: {e}")
+            raise
+
+    class PictureDict(dict):
+        def __missing__(self, file_path: str):
+            picture = open_picture(file_path)
+            self[file_path] = picture
+            return picture
+
+    pictures = PictureDict()
+    path = "static/image/buzhihuo.jpg"
+    #### 如果 path 不在字典中 会调用 __missing__ 方法打开图片并返回句柄
+    handle = pictures[path]
+    handle.seek(0)
+    image_data = handle.read()
+    print(f"Read {len(image_data)} bytes from {path}")
+
 
 if __name__ == "__main__":
     main()

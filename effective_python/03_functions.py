@@ -67,6 +67,11 @@ def main():
     #### 若关键字默认值会发生变化 则应当设置为 None
     #### 同时在函数中处理为 None 的默认行为 并在 docstring 中说明默认行为
 
+    # 25、keyword-only arguments && positional-only arguments
+    #### 在实际开发中 只要书写规范 一致使用 keyword-only arguments 即可
+
+    # 26、使用 functools.wraps 定义函数修饰器
+
 
 if __name__ == "__main__":
     main()

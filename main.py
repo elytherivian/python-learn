@@ -8,6 +8,7 @@ MAX_COUNT = 1000
 
 
 def main():
+    print("Python Basic Grammar")
     print(sys.executable)
     print(sys.version)
     print("Hello from python-learning!")
